@@ -14,21 +14,10 @@ public class CatOficioServiceImpl implements CatOficioService{
 	
 	@Autowired
 	CatOficioRepository catOficioRepository;
-	
-	@Override
-	public List<CatOficio> findAll() {
-		return catOficioRepository.findAll();
-	}
 
 	@Override
 	public List<CatOficio> obtenerRegistros() {
 		return catOficioRepository.obtenerRegistros();
-	}
-
-	@Override
-	public CatOficio findById(String id) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
@@ -37,8 +26,14 @@ public class CatOficioServiceImpl implements CatOficioService{
 	}
 
 	@Override
-	public void crear2(String descripcion) {
-		catOficioRepository.crear2(descripcion);
+	public CatOficio obtenerRegistroPorId(Integer id) {
+		
+		return catOficioRepository.obtenerRegistroPorId(id);
+	}
+
+	@Override
+	public Integer actualizar(Integer id, String descripcion) {
+		return catOficioRepository.actualizar(descripcion, id);
 	}
 
 }

@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import gob.mx.issste.siscal.old.api.server.utils.DBConstants;
@@ -20,9 +19,6 @@ public class CatOficio implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	/*@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="oficio_generator")
-	@SequenceGenerator(name="oficio_generator", schema = DBConstants.SCHEMA_SIAPRIT, 
-	sequenceName = "cat_oficio_pk", initialValue = 1, allocationSize = 1)*/
 	@Column(name = "id_cat_oficio")
 	private Integer idCatOficio;
 	private String descripcion;

@@ -1,28 +1,26 @@
 spring:
+  banner:
+      location: classpath:banner.txt
   application:
     name: siscal-old-api-server
   datasource:
     url: jdbc:informix-sqli://192.168.0.110:9094/siscal_old:INFORMIXSERVER=ol_informix1410_local_siscal_old
-    username: informix
+    username: informix #ifxjson
     password: 12345
     driver-class-name: com.informix.jdbc.IfxDriver
-#    dbcp2:
-#      time-between-eviction-runs-millis: 60000
-#      remove-abandoned-timeout: 60000
-#    tomcat:
-#      time-between-eviction-runs-millis: 60000
-#      remove-abandoned: true
-#      remove-abandoned-timeout: 60000
       
   jpa:
     show-sql: true
-#    hibernate:
-#      naming:
-#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-#        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
     properties:
       hibernate:
+#        jdbc.lob.non_contextual_creation: true
+#        format_sql: true
         dialect: org.hibernate.dialect.Informix10Dialect
+    open-in-view: false
         
 server:
   port: 8065
